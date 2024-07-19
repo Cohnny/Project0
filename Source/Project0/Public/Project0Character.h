@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "Project0Character.generated.h"
 
+class UCameraComponent;
+class USpringArmComponent;
+
 UCLASS()
 class PROJECT0_API AProject0Character : public ACharacter
 {
@@ -18,6 +21,12 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+	USpringArmComponent* SpringArm;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+	UCameraComponent* Camera; 
 
 public:	
 	// Called every frame
