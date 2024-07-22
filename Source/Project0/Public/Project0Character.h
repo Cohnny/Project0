@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InputMappingContext.h"
+#include "InputActionValue.h"
 #include "Project0Character.generated.h"
 
 class UCameraComponent;
@@ -26,7 +28,24 @@ protected:
 	USpringArmComponent* SpringArm;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	UCameraComponent* Camera; 
+	UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputMappingContext* MappingContext;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* MoveAction;
+	
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* JumpAction;
+
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+	void Jump() override;
+	
 
 public:	
 	// Called every frame
