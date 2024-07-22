@@ -10,11 +10,16 @@
 
 class UCameraComponent;
 class USpringArmComponent;
+class UMotionWarpingComponent;
 
 UCLASS()
 class PROJECT0_API AProject0Character : public ACharacter
 {
 	GENERATED_BODY()
+
+private:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
+	UMotionWarpingComponent* MotionWarpingComponent;
 
 public:
 	// Sets default values for this character's properties
