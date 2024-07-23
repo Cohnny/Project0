@@ -11,10 +11,8 @@
 #include "MotionWarpingComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
-// Sets default values
 AProject0Character::AProject0Character()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	bUseControllerRotationPitch = false;
@@ -33,7 +31,6 @@ AProject0Character::AProject0Character()
 	MotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("MotionWarpingComponent"));
 }
 
-// Called when the game starts or when spawned
 void AProject0Character::BeginPlay()
 {
 	Super::BeginPlay();
@@ -73,14 +70,12 @@ void AProject0Character::Jump()
 	Super::Jump();
 }
 
-// Called every frame
 void AProject0Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
 void AProject0Character::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
