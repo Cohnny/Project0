@@ -48,9 +48,13 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Input")
 	UInputAction* JumpAction;
+	
+    UPROPERTY(EditAnywhere, Category = "Input")
+    UInputAction* EquipAction;
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+	void Equip();
 	void Jump() override;
 	
 
